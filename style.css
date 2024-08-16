@@ -128,10 +128,6 @@ nav a:hover {
     .footer-content {
         flex-direction: column;
     }
-
-    .overlay {
-        flex-direction: column;
-    }
 }
 /* bagian akhir dari beranda */
 
