@@ -16,17 +16,14 @@ header {
     color: white;
     text-align: center;
     padding: 1em 0;
-    width: 100vw;
+    width: 100%;
 }
 
 nav {
     display: flex;
     justify-content: center;
     background-color: #333;
-    padding: 0; /* Ensure no padding */
-    margin: 0; /* Ensure no margin */
-    width: 100vw; /* Ensure full width */
-    box-sizing: border-box;
+    width: 100%;
 }
 
 nav a {
@@ -46,16 +43,13 @@ nav a:hover {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: 100vw; /* Ensure full width */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
-    padding: 0; /* Ensure no padding */
-    margin: 0; /* Ensure no margin */
     position: relative;
-    box-sizing: border-box;
 }
 
 .overlay {
@@ -76,6 +70,8 @@ nav a:hover {
 #beranda p {
     font-size: 18px;
     margin-bottom: 40px;
+    text-align: center;
+    padding: 0 10px;
 }
 
 #beranda button {
@@ -111,7 +107,6 @@ nav a:hover {
 .footer-content p {
     margin: 5px 0;
     padding: 5px 0;
-    color: #ffffff;
 }
 
 .footer-content a {
@@ -126,28 +121,34 @@ nav a:hover {
 
 @media (min-width: 600px) {
     .footer-content {
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    #beranda h1 {
+        font-size: 36px;
+    }
+
+    #beranda p {
+        font-size: 16px;
     }
 }
-/* bagian akhir dari beranda */
 
- section#tentang{
-    background-image: url(img/bg.jpg);
-    width: 100vw;
-    height: 100vh; /* Fullscreen */
-    background-size: cover; /* Gambar latar mencakup seluruh area */
-    background-position: center; /* Pusatkan gambar */
+section#tentang {
+    background-image: url('img/bg.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0; /* Hilangkan margin */
-    padding: 0; /* Hilangkan padding */
-    color:black
- }
- .tentanglanjut{
-    color:#ffffff
- }
+    color: black;
+}
 
+.tentanglanjut {
+    color: #ffffff;
+}
 
 section {
     padding: 20px;
@@ -155,14 +156,17 @@ section {
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8);
 }
+
 .map {
     width: 100%;
     height: 400px;
 }
+
 .image-container {
     text-align: center;
     margin: 20px 0;
 }
+
 .image-container img {
     max-width: 100%;
     height: auto;
@@ -171,40 +175,44 @@ section {
 
 .map-container {
     position: relative;
-    width: 800px;
-    height: 800px;
-    background: url('img/ef8b8259-aa59-4010-9f85-47fd6d48aa8f.jpg') no-repeat center ;
+    width: 100%;
+    height: 400px;
+    background: url('img/ef8b8259-aa59-4010-9f85-47fd6d48aa8f.jpg') no-repeat center;
     background-size: cover;
 }
-.house-icon {
+
+.house-icon,
+.cakro-icon,
+.masjid-icon,
+.balai-icon,
+.embung-icon {
     position: absolute;
+    cursor: pointer;
+}
+
+.house-icon {
     width: 17px;
     height: 17px;
-    cursor: pointer;
 }
+
 .cakro-icon {
-    position: absolute;
     width: 24px;
     height: 24px;
-    cursor: pointer;
 }
+
 .masjid-icon {
-    position: absolute;
     width: 26px;
     height: 26px;
-    cursor: pointer;
 }
-.balai-icon{
-    position: absolute;
+
+.balai-icon {
     width: 26px;
     height: 26px;
-    cursor: pointer;
 }
-.embung-icon{
-    position: absolute;
+
+.embung-icon {
     width: 35px;
     height: 35px;
-    cursor: pointer;
 }
 
 #details {
@@ -214,8 +222,47 @@ section {
     max-width: 800px;
     margin: 20px auto;
 }
+
 #details img {
     max-width: 100%;
     margin-top: 10px;
 }
 
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    #beranda h1 {
+        font-size: 36px;
+    }
+
+    #beranda p {
+        font-size: 16px;
+    }
+
+    #details {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #beranda h1 {
+        font-size: 28px;
+    }
+
+    #beranda p {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+
+    #details {
+        padding: 8px;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+}
